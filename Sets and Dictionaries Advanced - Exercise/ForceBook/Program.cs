@@ -38,6 +38,11 @@ namespace ForceBook
                     string side = command[1];
                     string user = command[0];
 
+                    if (!sides.ContainsKey(side))
+                    {
+                        sides.Add(side, new List<string>());
+                    }
+
                     if(!sides.Any(x => x.Value.Contains(user)))
                     {
                         sides[side].Add(user);
